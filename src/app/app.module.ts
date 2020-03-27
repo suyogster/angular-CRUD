@@ -21,9 +21,10 @@ import { ToastrModule } from "ngx-toastr";
     UserComponent,
     UserListComponent
   ],
-  BrowserModule,
-  AppRoutingModule,
+
   imports: [
+    BrowserModule,
+    AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     FormsModule,
