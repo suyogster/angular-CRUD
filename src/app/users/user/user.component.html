@@ -1,0 +1,87 @@
+<h1 class="display-4">User Register</h1>
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input
+    type="hidden"
+    name="id"
+    #id="ngModel"
+    [(ngModel)]="service.formData.id"
+  />
+  <div class="form-group">
+    <input
+      name="fullname"
+      #fullname="ngModel"
+      [(ngModel)]="service.formData.fullname"
+      class="form-control"
+      placeholder="Enter Full Name"
+      required
+    />
+    <div *ngIf="fullname.invalid && fullname.touched" class="validation-error">
+      Fullname is required!!
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input
+        class="form-control"
+        name="address"
+        #address="ngModel"
+        [(ngModel)]="service.formData.address"
+        placeholder="Enter Address"
+        required
+      />
+      <div *ngIf="address.invalid && address.touched" class="validation-error">
+        Address is required!!
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <input
+        name="contact"
+        #contact="ngModel"
+        [(ngModel)]="service.formData.contact"
+        class="form-control"
+        placeholder="Enter Contact"
+        required
+      />
+      <div *ngIf="contact.invalid && contact.touched" class="validation-error">
+        Contact is required!!
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <input
+      name="email"
+      #email="ngModel"
+      [(ngModel)]="service.formData.email"
+      class="form-control"
+      placeholder="Enter Email"
+      required
+    />
+    <div *ngIf="email.invalid && email.touched" class="validation-error">
+      Email is required!!
+    </div>
+  </div>
+  <div class="form-group">
+    <p><span>Admin?</span></p>
+    <input
+      name="admin"
+      type="checkbox"
+      #admin="ngModel"
+      [(ngModel)]="service.formData.admin"
+      class="form-control"
+      placeholder="Admin?"
+    />
+    <div *ngIf="admin.invalid && admin.touched" class="validation-error">
+      Admin is required!!
+    </div>
+  </div>
+  <div class="form-group">
+    <button
+      type="submit"
+      [disabled]="form.invalid"
+      class="btn btn-lg btn-block btn-info"
+    >
+      Submit
+    </button>
+  </div>
+</form>

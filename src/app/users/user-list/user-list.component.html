@@ -1,0 +1,24 @@
+<table class="table table-hover">
+  <thead>
+    <th>Fullname</th>
+    <th>Address</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Admin?</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of list">
+      <td (click)="onEdit(user)">{{ user.fullname }}</td>
+      <td (click)="onEdit(user)">{{ user.address }}</td>
+      <td (click)="onEdit(user)">{{ user.contact }}</td>
+      <td (click)="onEdit(user)">{{ user.email }}</td>
+      <td (click)="onEdit(user)">{{ user.admin }}</td>
+      <td>
+        <a class="btn btn-danger" (click)="onDelete(user.id)">
+          <i class="fa fa-trash"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
